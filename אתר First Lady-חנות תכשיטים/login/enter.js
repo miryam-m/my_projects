@@ -1,4 +1,4 @@
-let users = JSON.parse(localStorage.getItem('users')) || []; // קרא את המשתמשים מ-localStorage
+let users = JSON.parse(localStorage.getItem('users')) || [];
 
 function login() {
     const email = document.getElementById('loginEmail').value;
@@ -6,10 +6,10 @@ function login() {
     const user = users.find(u => u.email === email && u.password === password);
 
     if (user) {
-        localStorage.setItem('currentUser', JSON.stringify(user)); // שמור את המשתמש הנוכחי
-        window.location.href = "./opening/homepage.html"; // החלף לדף הבית שלך
+        localStorage.setItem('currentUser', JSON.stringify(user)); 
+        window.location.href = "./opening/homepage.html"; 
     } else {
-        document.getElementById('loginMessage').innerText = "אתה לא מחובר, אם אין לך שם משתמש, אנא הרשמו.";
+        document.getElementById('loginMessage').innerText = "You are not logged in, if you do not have a username, please register.";
     }
 }
 
@@ -22,12 +22,12 @@ function signup() {
     const existingUser = users.find(u => u.email === email);
 
     if (existingUser) {
-        document.getElementById('signupMessage').innerText = "אימייל זה כבר קיים במערכת. אנא בחר סיסמא אחרת.";
+        document.getElementById('signupMessage').innerText = "This email already exists in the system. Please choose a different password";
         return;
     }
 
     if (password !== confirmPassword) {
-        document.getElementById('signupMessage').innerText = "סיסמאות לא תואמות. אנא הקש שוב.";
+        document.getElementById('signupMessage').innerText = "Passwords do not match. Please tap again.";
         return;
     }
 
