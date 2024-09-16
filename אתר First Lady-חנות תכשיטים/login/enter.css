@@ -1,0 +1,80 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0; /* הוסף אפס למרווח */
+    position: relative; /* להבטיח שהאלמנט ::before יהיה מוחל עליו */
+    overflow: hidden; /* להבטיח שלא יהיו גלילות */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('img.jpg'); /* התמונה שלך */
+    background-size: cover; /* כיסוי מלא של הרקע */
+    filter: blur(5px); /* טשטוש התמונה */
+    z-index: 0; /* להבטיח שזה יהיה מתחת לכל התוכן */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    padding-right: 2%;
+    background-color: rgba(255, 255, 255, 0.8); /* שקיפות לרקע של הקונטיינר */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative; /* להבטיח שהתוכן יופיע מעל הרקע */
+    z-index: 1; /* להבטיח שהתוכן יופיע מעל */
+}
+
+.login, .signup {
+    padding: 20px;
+    width: 50%;
+}
+
+h2 {
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.message {
+    color: red;
+    text-align: center;
+}
+
+.logo{
+    height: 150px;
+    width: 150px;
+    margin-top: 6%;
+    margin-bottom: 1%;
+    margin-left: 20%;
+    border-radius:20px;
+}

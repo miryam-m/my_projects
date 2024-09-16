@@ -1,0 +1,107 @@
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="payment.css">
+    <title>Shopping Basket</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="left-section">
+          <img class="logo" src="../image/תמונת לוגו.jpg">
+    
+        </div>
+        <div class="middle-section">
+          <p class="lady-first">Shopping Basket</p>
+        </div>
+        <div class="right-section">
+    
+          <button class="a-link">
+            <a href="../opening/homePage.html">
+              <img class="cart-icon" src="../image/h.jpg">
+            </a>
+            <div class="tooltip">Home page.</div>
+          </button>
+    
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="cart-container">
+        </div>
+        <div id="summary">
+            <h2>Summary of the purchase:</h2>
+        <p>Quantity of products: 0$</p>
+        <p>Total Price:0$</p>
+        </div>
+    </div>
+    <div class="buttons">
+        <input class="button" type="button" value="Payment" id="openPaymentModal">
+        <!-- מודל עבור דף תשלום -->
+        <div class="modal" id="paymentModal">
+            <div class="modal-content">
+                <span class="close" id="closePaymentModal">&times;</span>
+                <!-- כאן אתה יכול להכניס את התוכן של דף התשלום שלך -->
+                <div class="container-payment">
+                    <form action="cart.html" method="POST">
+                        <div class="form-group-payment">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="id">Id:</label>
+                            <input type="tel" id="id" name="id" pattern="[0-9]{9}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number:</label>
+                            <input type="text" id="cardNumber" name="cardNumber" pattern="[0-9]{16}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expirationDate">Validity:</label>
+                            <input type="month" id="expirationDate" name="expirationDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV:</label>
+                            <input type="text" id="cvv" name="cvv" pattern="[0-9]{3}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="payment">Payments:</label>
+                            <select id="payment" name="payment">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" id="submit" value="Confirm payment:">
+                            <label>
+                                <input type="checkbox" id="savePaymentDetails"> Save payment details for next time
+                            </label>
+                        </div>
+                    </form>
+                    <div class="loading-overlay" id="loadingOverlay">
+                        <div class="loading-message" id="loadingMessage">
+                            <h2 id="loadingTitle">Card confirmation is in progress...</h2> <!-- הוספת ID לכותרת -->
+                            <h2 id="loadingTitle2"></h2> 
+                            <h2 id="loadingTitle3"></h2> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="button" onclick="clearCart()">Cancel the entire purchase</button>
+    </div>
+    <script src="cart.js"></script>
+    <script src="payment.js"></script>
+</body>
+
+</html>

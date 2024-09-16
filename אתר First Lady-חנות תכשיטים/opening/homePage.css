@@ -1,0 +1,140 @@
+
+#welcome{
+color: black;
+z-index: 700px;
+margin-top: -50px;
+margin-bottom: 20px;
+text-align: center;
+}
+
+.a-link{
+  background-color:white;
+  border: none;
+  width: 10px;
+  margin-left:30px;
+  display: flex;
+  justify-content: center;
+}
+
+.a-link .tooltip{
+  position: absolute;
+  background-color: gray;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 52px;
+  font-size: 10px;
+   bottom: 370px;
+   opacity: 0;
+   transition: opacity 0.15s;
+   pointer-events: none;
+   white-space: nowrap;
+  margin-left: 20px;
+}
+
+.a-link:hover .tooltip{
+opacity: 1
+}
+.cart-icon{ 
+  padding: -5px -5px;
+  margin: 0px 3px;
+  margin-top: 300px;
+  height: 30px;
+  width: 37px;
+  transition: height 0.2s ,width 0.2s;
+  background-color: black;
+}
+
+
+.cart-icon:hover{
+  height: 33px;
+  width: 40px;
+}
+
+
+.video-grid{
+  margin-top: -250px;
+  display: grid;
+  row-gap: 20px;
+}
+
+.thumbnail{
+  position: relative;
+  width: 400px;
+  height: 250px;
+  border: 5px;
+  border-color: gold;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+}
+
+.thumbnail:hover{
+  width: 390px;
+  height: 240px;
+  box-shadow: 15px 15px 15px rgba(0,0,0,0.5);
+}
+
+.thumbnail-row{
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.sub{
+ position: absolute;
+font-size: 20px;
+bottom: 17px;
+left: 10px;
+color: black;
+}
+
+.video-preview{
+  margin-top: 250px;
+  margin-left: 50px; 
+  width: 180px;
+  height: 80px;
+  display: inline-block;
+}
+
+
+
+@media (max-width:900px){
+  .video-grid{
+      grid-template-columns: 1fr ;
+  }
+  .thumbnail{
+    width:380px;
+    height: 240px;
+  }
+
+  .video-preview{
+    margin-left: 100px;
+  }
+}
+
+
+@media (min-width:901px) and (max-width:1667px){
+  .video-grid{
+      grid-template-columns: 1fr 1fr ;
+      column-gap: 9px;
+  }
+  .thumbnail{
+    width: 400px;
+    height: 250px;
+  }
+
+  .video-preview{
+    margin-left: 75px;
+  }
+}
+
+@media (min-width: 1368px){
+  .video-grid{
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 15px;
+  }
+
+  .thumbnail{
+    width: 400px;
+    height: 250px;
+  }
+}
+
+
